@@ -21,6 +21,17 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  let singaporeElement = document.querySelector("#singapore");
+  if (singaporeElement) {
+    let singaporeDateElement = singaporeElement.querySelector(".date");
+    let singaporeTimeElement = singaporeElement.querySelector(".time");
+    let singaporeTime = moment().tz("Asia/Singapore");
+
+    singaporeDateElement.innerHTML = moment().format("MMMM Do YYYY");
+    singaporeTimeElement.innerHTML = singaporeTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
